@@ -73,7 +73,8 @@ La API utiliza JWT para autenticar a los usuarios. Los pasos básicos para obten
 
 Puedes importar la colección de Postman para probar la API utilizando el siguiente archivo:
 
-[Descargar Colección de Postman](Foro Alura.postman_collection.json)
+[Descargar Colección de Postman](https://github.com/dzapata1995/api-rest-foro/raw/main/Foro%20Alura.postman_collection.json)
+
 
 ## Estructura de Carpetas
 ```
