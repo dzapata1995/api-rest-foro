@@ -1,0 +1,45 @@
+CREATE TABLE perfil (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE usuario (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    perfil_id BIGINT NOT NULL,
+    FOREIGN KEY (perfil_id) REFERENCES perfil(id)
+);
+
+CREATE TABLE curso (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(15) NOT NULL UNIQUE,
+    nombre VARCHAR(100) NOT NULL,
+    categoria VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE topico (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'ABIERTO',
+    autor_id BIGINT NOT NULL,
+    curso_id BIGINT NOT NULL,
+    FOREIGN KEY (autor_id) REFERENCES usuario(id),
+    FOREIGN KEY (curso_id) REFERENCES curso(id)
+);
+
+CREATE TABLE respuesta (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    mensaje TEXT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    solucion BOOLEAN DEFAULT FALSE,
+    autor_id BIGINT NOT NULL,
+    topico_id BIGINT NOT NULL,
+    FOREIGN KEY (autor_id) REFERENCES usuario(id),
+    FOREIGN KEY (topico_id) REFERENCES topico(id) ON DELETE CASCADE
+);
