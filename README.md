@@ -69,6 +69,12 @@ La API utiliza JWT para autenticar a los usuarios. Los pasos básicos para obten
 2. El servidor devuelve un token JWT si las credenciales son válidas.
 3. El token debe ser incluido en el encabezado `Authorization` de todas las solicitudes protegidas como `Bearer {token}`.
 
+## Colección de Postman
+
+Puedes importar la colección de Postman para probar la API utilizando el siguiente archivo:
+
+[Descargar Colección de Postman](Foro Alura.postman_collection.json)
+
 ## Estructura de Carpetas
 ```
 src
