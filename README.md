@@ -70,18 +70,19 @@ La API utiliza JWT para autenticar a los usuarios. Los pasos básicos para obten
 3. El token debe ser incluido en el encabezado `Authorization` de todas las solicitudes protegidas como `Bearer {token}`.
 
 ## Estructura de Carpetas
-
+```
 src
 ├── main
 │ ├── java
 │ │ └── com
-│ │ └── foro
-│ │ ├── controller
-│ │ ├── dto
-│ │ ├── model
-│ │ ├── repository
-│ │ ├── security
-│ │ ├── service
+│ │ │  └── foro
+│ │ │ ├── controller
+│ │ │ ├── dto
+│ │ │ ├── model
+│ │ │ ├── repository
+│ │ │ ├── security
+│ │ │ ├── service
 │ └── resources
-│ ├── application.properties
-│ └── data.sql
+│ │ ├── application.properties
+│ │ └── data.sql
+```
